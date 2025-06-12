@@ -70,17 +70,17 @@ function Resume() {
             >
               <Page
                 pageNumber={pageNumber}
-                scale={width > 786 ? 1.4 : 0.6}
+                scale={width > 786 ? 1.7 : 0.9}
                 renderTextLayer={true}
                 renderAnnotationLayer={true}
-                width={width > 786 ? 500 : width - 50}
+                width={width > 786 ? 600 : width - 30}
               />
             </Document>
           </div>
         </Row>
 
-        {numPages > 1 &&
-          <Row style={{ justifyContent: "center", position: "relative", marginTop: "20px" }}>
+        {ResumeFile && numPages > 1 &&
+          <Row style={{ justifyContent: "center", position: "relative", marginTop: "-30px" }}>
             <Pagination
               currentPage={pageNumber}
               totalPages={numPages}
@@ -89,16 +89,18 @@ function Resume() {
           </Row>
         }
 
-        <Row style={{ justifyContent: "center", position: "relative", marginTop: "20px" }}>
-          <Button
-            variant="primary"
-            onClick={handleDownloadCV}
-            style={{ maxWidth: "250px" }}
-          >
-            <AiOutlineDownload />
-            &nbsp;Download CV
-          </Button>
-        </Row>
+        {ResumeFile &&
+          <Row style={{ justifyContent: "center", position: "relative", marginTop: numPages > 1 ? "20px" : "-20px", marginBottom: "10px" }}>
+            <Button
+              variant="primary"
+              onClick={handleDownloadCV}
+              style={{ maxWidth: "250px" }}
+            >
+              <AiOutlineDownload />
+              &nbsp;Download CV
+            </Button>
+          </Row>
+        }
       </Container>
     </div>
   );

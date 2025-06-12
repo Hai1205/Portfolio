@@ -3,7 +3,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import Particle from "../../components/Particle";
 import Github from "./components/Github";
 import Technology from "./components/Technology";
-import Aboutcard from "./components/AboutCard";
+import AboutCard from "./components/AboutCard";
 import laptopImg from "../../Assets/about.png";
 import { CgCPlusPlus } from "react-icons/cg";
 import {
@@ -66,7 +66,6 @@ function About() {
     { name: "CSS3", icon: <DiCss3 /> },
     { name: "HTML5", icon: <SiHtml5 /> },
     { name: "PHP", icon: <DiPhp /> },
-    { name: "Linux", icon: <DiLinux /> },
     { name: "JavaScript", icon: <DiJavascript1 /> },
     { name: "Python", icon: <DiPython /> },
     { name: "Kotlin", icon: <SiKotlin /> },
@@ -89,6 +88,7 @@ function About() {
     { name: "AWS", icon: <FaAws /> },
     { name: "Docker", icon: <FaDocker /> },
     { name: "Vercel", icon: <SiVercel /> },
+    { name: "Linux", icon: <DiLinux /> },
   ], []);
 
   return (
@@ -108,7 +108,7 @@ function About() {
             <h1 style={{ fontSize: "2.1em", paddingBottom: "20px" }}>
               Know Who <strong className="purple">I&apos;M</strong>
             </h1>
-            <Aboutcard />
+            <AboutCard />
           </Col>
           
           <Col
@@ -121,7 +121,7 @@ function About() {
         </Row>
         
         <h1 className="project-heading">
-          Professional <strong className="purple">Skillset </strong>
+          Professional <strong className="purple">Skill</strong>
         </h1>
 
         <Technology tools={programs} />

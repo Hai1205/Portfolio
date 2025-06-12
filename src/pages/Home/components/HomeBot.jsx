@@ -39,7 +39,7 @@ function Home2() {
             </h1>
 
             <p className="home-about-body">
-              I fell in love with programming and I have at least learnt
+              I fell in love with programming and I have at least learn
               something, I think… 🤷‍♂️
 
               <br />

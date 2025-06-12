@@ -7,9 +7,31 @@ import {
 import { FaLinkedinIn } from "react-icons/fa";
 
 function Footer() {
-  let date = new Date();
-  let year = date.getFullYear();
   const name = "Hai Nguyen";
+
+  const socialLinks = [
+    {
+      name: "Github",
+      url: "https://github.com/Hai1205",
+      icon: <AiFillGithub />
+    },
+    {
+      name: "Twitter",
+      url: "https://x.com/hainguyen_1205",
+      icon: <AiOutlineTwitter />
+    },
+    {
+      name: "LinkedIn",
+      url: "https://www.linkedin.com/in/hai-nguyen-hoang-a85546248/",
+      icon: <FaLinkedinIn />
+    },
+    {
+      name: "Instagram",
+      url: "https://www.instagram.com/nhh_1205",
+      icon: <AiFillInstagram />
+    }
+  ];
+
   return (
     <Container fluid className="footer">
       <Row>
@@ -18,54 +40,24 @@ function Footer() {
         </Col>
 
         <Col md="4" className="footer-copywright">
-          <h3>Copyright © {year} {name}.</h3>
+          <h3>Copyright © 2025 {name}.</h3>
         </Col>
 
         <Col md="4" className="footer-body">
           <ul className="footer-icons">
-            <li className="social-icons">
-              <a
-                href="https://github.com/Hai1205"
-                style={{ color: "white" }}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <AiFillGithub />
-              </a>
-            </li>
-
-            <li className="social-icons">
-              <a
-                href="https://x.com/hainguyen_1205"
-                style={{ color: "white" }}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <AiOutlineTwitter />
-              </a>
-            </li>
-
-            <li className="social-icons">
-              <a
-                href="https://www.linkedin.com/in/hai-nguyen-hoang-a85546248/"
-                style={{ color: "white" }}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FaLinkedinIn />
-              </a>
-            </li>
-
-            <li className="social-icons">
-              <a
-                href="https://www.instagram.com/nhh_1205"
-                style={{ color: "white" }}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <AiFillInstagram />
-              </a>
-            </li>
+            {socialLinks.map((link, index) => (
+              <li key={index} className="social-icons">
+                <a
+                  href={link.url}
+                  style={{ color: "white" }}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={link.name}
+                >
+                  {link.icon}
+                </a>
+              </li>
+            ))}
           </ul>
         </Col>
       </Row>

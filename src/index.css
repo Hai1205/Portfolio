@@ -534,6 +534,19 @@ button:focus {
   opacity: 0.9 !important;
   transition: all 0.5s ease 0s !important;
   height: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.project-card-view .card-body {
+  display: flex !important;
+  flex-direction: column !important;
+  flex-grow: 1 !important;
+}
+
+.project-card-view .card-text {
+  flex-grow: 1 !important;
+  margin-bottom: 15px !important;
 }
 
 .project-card-view:hover {
@@ -681,6 +694,9 @@ button:focus {
   padding-bottom: 30px !important;
   background-image: var(--section-background-color) !important;
   color: white !important;
+  min-height: 100vh !important;
+  display: flex !important;
+  flex-direction: column !important;
 }
 
 .resume {
