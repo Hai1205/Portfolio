@@ -1,10 +1,10 @@
 import { useMemo } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import Particle from "../../components/Particle";
+import Particle from "../components/Particle";
 import Github from "./components/Github";
 import Technology from "./components/Technology";
 import AboutCard from "./components/AboutCard";
-import laptopImg from "../../Assets/about.png";
+import laptopImg from "../../Assets/images/about.png";
 import { CgCPlusPlus } from "react-icons/cg";
 import {
   DiJavascript1,
@@ -19,7 +19,7 @@ import {
   DiRust,
   DiDjango,
   DiCss3,
-  DiGit, 
+  DiGit,
   DiNetbeans
 } from "react-icons/di";
 import {
@@ -71,7 +71,7 @@ function About() {
     { name: "Kotlin", icon: <SiKotlin /> },
     { name: "Java", icon: <DiJava /> },
     { name: "C++", icon: <CgCPlusPlus /> },
-  ], []);  
+  ], []);
 
   const tools = useMemo(() => [
     { name: "Microsoft Edge", icon: <FaEdge /> },
@@ -94,32 +94,27 @@ function About() {
   return (
     <Container fluid className="about-section">
       <Particle />
-      
+
       <Container>
-        <Row style={{ justifyContent: "center", padding: "10px" }}>
+        <Row className="flex justify-center p-2.5">
           <Col
             md={7}
-            style={{
-              justifyContent: "center",
-              paddingTop: "30px",
-              paddingBottom: "50px",
-            }}
+            className="flex flex-col justify-center pt-8 pb-12"
           >
-            <h1 style={{ fontSize: "2.1em", paddingBottom: "20px" }}>
+            <h1 className="text-[2.1em] pb-5">
               Know Who <strong className="purple">I&apos;M</strong>
             </h1>
             <AboutCard />
           </Col>
-          
+
           <Col
             md={5}
-            style={{ paddingTop: "120px", paddingBottom: "50px" }}
-            className="about-img"
+            className="about-img pt-28 pb-12 flex items-center"
           >
-            <img src={laptopImg} alt="about" className="img-fluid" />
+            <img src={laptopImg} alt="about" className="img-fluid mx-auto" />
           </Col>
         </Row>
-        
+
         <h1 className="project-heading">
           Professional <strong className="purple">Skill</strong>
         </h1>
@@ -129,7 +124,7 @@ function About() {
         <h1 className="project-heading">
           <strong className="purple">Tools</strong> I use
         </h1>
-       
+
         <Technology tools={tools} />
 
         <Github />

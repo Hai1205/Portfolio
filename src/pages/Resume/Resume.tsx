@@ -1,25 +1,28 @@
 import { useState, useEffect, useMemo } from "react";
 import { Container, Row, Button } from "react-bootstrap";
-import Particle from "../../components/Particle";
+import Particle from "../components/Particle";
 import { AiOutlineDownload } from "react-icons/ai";
 import { Document, Page, pdfjs } from "react-pdf";
 import "react-pdf/dist/esm/Page/AnnotationLayer.css";
 import "react-pdf/dist/esm/Page/TextLayer.css";
-import ResumeFile from "../../Assets/Nguyen_Hoang_Hai_Resume.pdf";
-import Pagination from "./components/Pagination";
+import ResumeFile from "../../Assets/pdf/Nguyen_Hoang_Hai_Resume.pdf";
+import PaginationComponent from "../components/Pagination";
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
 
 function Resume() {
-  const [width, setWidth] = useState(1200);
-  const [numPages, setNumPages] = useState(null);
+  const [numPages, setNumPages] = useState<number | null>(null);
   const [pageNumber, setPageNumber] = useState(1);
+  const [pdfWidth, setPdfWidth] = useState(600);
 
   const documentOptions = useMemo(() => ({ workerSrc: "/pdf.worker.js" }), []);
 
+  const isMobile = useMemo(() => window.innerWidth < 786, []);
+
   useEffect(() => {
     const handleResize = () => {
-      setWidth(window.innerWidth);
+      const calculatedWidth = !isMobile ? 600 : window.innerWidth - 30;
+      setPdfWidth(calculatedWidth);
     };
 
     window.addEventListener("resize", handleResize);
@@ -43,61 +46,58 @@ function Resume() {
     document.body.removeChild(link);
   };
 
-  const onDocumentLoadSuccess = ({ numPages }) => {
+  const onDocumentLoadSuccess = (numPages: number) => {
     setNumPages(numPages);
     setPageNumber(prev => (prev > numPages ? 1 : prev));
   };
 
+  const buttonWidth = Math.floor(pdfWidth / (!isMobile ? 3 : 2.5));
+
   return (
-    <div>
+    <div className="min-h-screen">
       <Container fluid className="resume-section">
         <Particle />
 
-        <Row className="resume">
-          <div
-            style={{
-              width: "100%",
-              display: "flex",
-              justifyContent: "center",
-              overflow: "auto"
-            }}
-          >
+        <Row className="resume pt-12 pb-12 justify-center">
+          <div className="w-full flex justify-center overflow-auto">
             <Document
               file={ResumeFile}
-              onLoadSuccess={onDocumentLoadSuccess}
-              className="d-flex justify-content-center"
+              onLoadSuccess={(document) => onDocumentLoadSuccess(document?.numPages)}
+              className="flex justify-center"
               options={documentOptions}
             >
               <Page
                 pageNumber={pageNumber}
-                scale={width > 786 ? 1.7 : 0.9}
+                scale={!isMobile ? 1.7 : 0.9}
                 renderTextLayer={true}
                 renderAnnotationLayer={true}
-                width={width > 786 ? 600 : width - 30}
+                width={pdfWidth}
               />
             </Document>
           </div>
         </Row>
 
-        {ResumeFile && numPages > 1 &&
-          <Row style={{ justifyContent: "center", position: "relative", marginTop: "-30px" }}>
-            <Pagination
+        {ResumeFile && numPages && numPages > 1 &&
+          <Row className="justify-center relative mt-8 mb-8">
+            <PaginationComponent
               currentPage={pageNumber}
               totalPages={numPages}
               onPageChange={setPageNumber}
+              size="sm"
             />
           </Row>
         }
 
         {ResumeFile &&
-          <Row style={{ justifyContent: "center", position: "relative", marginTop: numPages > 1 ? "20px" : "-20px", marginBottom: "10px" }}>
+          <Row className={`justify-center relative mb-16 ${numPages && numPages > 1 ? "mt-8" : "mt-0"}`}>
             <Button
               variant="primary"
               onClick={handleDownloadCV}
-              style={{ maxWidth: "250px" }}
+              className="bg-[#623686] border-[#623686] hover:bg-[#6d20c5d7] hover:border-[#6d20c5d7] focus:outline-none focus:shadow-none"
+              style={{ width: `${buttonWidth}px` }}
             >
-              <AiOutlineDownload />
-              &nbsp;Download CV
+              <AiOutlineDownload className="inline-block" />
+              <span className="ml-1">Download CV</span>
             </Button>
           </Row>
         }

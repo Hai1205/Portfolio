@@ -11,13 +11,19 @@ This is a personal Portfolio website project built with React and Vite, designed
 
 ## Technologies Used
 
-- React 17
+- React 18
 - React Router v6
 - React Bootstrap
+- Tailwind CSS
+- Shadcn UI
+- Lucide React Icons
+- Class Variance Authority
+- Radix UI (Slot)
 - React PDF
 - React Typewriter Effect
 - React Particles
 - Vite
+- Github Calendar
 
 ## Installation
 
@@ -31,7 +37,7 @@ cd portfolio
 2. Install the packages:
 
 ```bash
-npm install
+npm install --legacy-peer-deps
 ```
 
 3. Run the application in development mode:
@@ -49,8 +55,8 @@ npm run build
 ## Customization
 
 - Replace personal information in components
-- Update the PDF resume file in the `src/Assets` directory
-- Add project images in `src/Assets/Projects`
+- Update the PDF resume file in the `src/Assets/pdf` directory
+- Add project images in `src/Assets/project_images`
 
 ## Deployment
 

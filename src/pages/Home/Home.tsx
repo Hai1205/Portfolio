@@ -1,6 +1,6 @@
 import { Container, Row, Col } from "react-bootstrap";
-import homeLogo from "../../Assets/home-main.svg";
-import Particle from "../../components/Particle";
+import homeLogo from "../../Assets/svg/home-main.svg";
+import Particle from "../components/Particle";
 import Home2 from "./components/HomeBot";
 import TypeWriter from "./components/TypeWriter";
 
@@ -13,7 +13,7 @@ function Home() {
         <Container className="home-content">
           <Row>
             <Col md={7} className="home-header">
-              <h1 style={{ paddingBottom: 15 }} className="heading">
+              <h1 className="heading pb-4">
                 Hi There! {" "} <span className="wave" role="img" aria-labelledby="wave">👋🏻</span>
               </h1>
 
@@ -21,17 +21,16 @@ function Home() {
                 I&apos;M <strong className="main-name"> Hai Nguyen</strong>
               </h1>
 
-              <div style={{ padding: 50, textAlign: "left" }}>
+              <div className="pl-12 pr-12 py-8 text-left">
                 <TypeWriter />
               </div>
             </Col>
 
-            <Col md={5} style={{ paddingBottom: 20 }}>
+            <Col md={5} className="pb-5">
               <img
                 src={homeLogo}
                 alt="home"
-                className="img-fluid"
-                style={{ maxHeight: "450px" }}
+                className="img-fluid max-h-[450px]"
               />
             </Col>
           </Row>

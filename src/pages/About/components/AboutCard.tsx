@@ -5,7 +5,7 @@ function AboutCard() {
     <Card className="quote-card-view">
       <Card.Body>
         <blockquote className="blockquote mb-0">
-          <p style={{ textAlign: "justify" }}>
+          <p className="text-justify">
             Hi Everyone, I am <span className="purple">Hai Nguyen </span>
             from <span className="purple"> Ho Chi Minh City, Viet Nam.</span>
             <br />
@@ -18,30 +18,13 @@ function AboutCard() {
             seeking an internship opportunity in a professional environment to
             further develop my skills and contribute to the success of the
             company.
-            {/* <br />
-            I have completed Integrated MSc (IMSc) in Maths and Computing at BIT
-            Mesra.
-            <br />
-            <br />
-            Apart from coding, some other activities that I love to do! */}
-          </p>
-          {/* <ul>
-            <li className="about-activity">
-              <ImPointRight /> Playing Games
-            </li>
-            <li className="about-activity">
-              <ImPointRight /> Writing Tech Blogs
-            </li>
-            <li className="about-activity">
-              <ImPointRight /> Travelling
-            </li>
-          </ul> */}
-
-          <p style={{ color: "rgb(155 126 172)" }}>
-            &quot;Strive to build things that make a difference!&quot;{" "}
           </p>
 
-          <footer className="blockquote-footer">Hai</footer>
+          <p className="text-[#9b7eac]">
+            &quot;Your start doesn&apos;t define your end.&quot;{" "}
+          </p>
+
+          <footer className="blockquote-footer">Hai Nguyen</footer>
         </blockquote>
       </Card.Body>
     </Card>

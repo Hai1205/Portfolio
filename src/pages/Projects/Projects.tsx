@@ -1,15 +1,15 @@
 import { Container, Row, Col } from "react-bootstrap";
 
 import ProjectCard from "./components/ProjectCards";
-import Particle from "../../components/Particle";
+import Particle from "../components/Particle";
 
-import facebook from "../../Assets/Projects/facebook.png";
-import countTheLoveDay from "../../Assets/Projects/countTheLoveDay.png";
-import sportify from "../../Assets/Projects/sportify.png";
-import x from "../../Assets/Projects/x.png";
-import overflow from "../../Assets/Projects/overflow.png";
-import profile from "../../Assets/Projects/profile.png";
-import carMaster from "../../Assets/Projects/carMaster.png";
+import facebook from "../../Assets/project_images/facebook.png";
+import countTheLoveDay from "../../Assets/project_images/countTheLoveDay.png";
+import sportify from "../../Assets/project_images/sportify.png";
+import x from "../../Assets/project_images/x.png";
+import overflow from "../../Assets/project_images/overflow.png";
+import profile from "../../Assets/project_images/profile.png";
+import carMaster from "../../Assets/project_images/carMaster.png";
 
 function Projects() {
   const projectList = [
@@ -53,7 +53,7 @@ function Projects() {
       description:
         "CountTheLoveDays is a simple and romantic web project that visualizes the number of days a couple has been together. It features animated heart effects, a live clock, and a photo memory section with a polaroid-style reveal animation. The project is built using HTML, CSS, and JavaScript, and is fully responsive.",
       ghLink: "https://github.com/Hai1205/Count-The-Love-Days.git",
-      demoLink: "https://hai1205.github.io/Count-The-Love-Days/",
+      demoLink: "https://hai1205.github.io/Count_The_Love_Days/",
     },
     {
       imgPath: profile,
@@ -77,16 +77,17 @@ function Projects() {
   return (
     <Container fluid className="project-section">
       <Particle />
-      
+
       <Container>
         <h1 className="project-heading">
           My Recent <strong className="purple">Works </strong>
         </h1>
-        <p style={{ color: "white" }}>
+        
+        <p className="text-white">
           Here are a few projects I&apos;ve worked on recently.
         </p>
 
-        <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
+        <Row className="flex justify-center pb-2.5">
           {projectList.map((project, index) => (
             <Col md={4} className="project-card" key={index}>
               <ProjectCard {...project} />

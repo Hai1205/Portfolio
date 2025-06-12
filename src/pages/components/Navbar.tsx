@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
@@ -19,56 +19,63 @@ function NavBar() {
     {
       path: "/",
       name: "Home",
-      icon: <AiOutlineHome style={{ marginBottom: "2px" }} />
+      icon: <AiOutlineHome className="mb-0.5" />
     },
     {
       path: "/about",
       name: "About",
-      icon: <AiOutlineUser style={{ marginBottom: "2px" }} />
+      icon: <AiOutlineUser className="mb-0.5" />
     },
     {
       path: "/project",
       name: "Projects",
-      icon: <AiOutlineFundProjectionScreen style={{ marginBottom: "2px" }} />
+      icon: <AiOutlineFundProjectionScreen className="mb-0.5" />
     },
     {
       path: "/resume",
       name: "Resume",
-      icon: <CgFileDocument style={{ marginBottom: "2px" }} />
+      icon: <CgFileDocument className="mb-0.5" />
     }
   ];
 
-  function scrollHandler() {
-    if (window.scrollY >= 20) {
-      setNavColor(true);
-    } else {
-      setNavColor(false);
+  useEffect(() => {
+    function scrollHandler() {
+      if (window.scrollY >= 20) {
+        setNavColor(true);
+      } else {
+        setNavColor(false);
+      }
     }
-  }
 
-  window.addEventListener("scroll", scrollHandler);
+    window.addEventListener("scroll", scrollHandler);
+
+    return () => {
+      window.removeEventListener("scroll", scrollHandler);
+    };
+  }, []);
 
   return (
     <Navbar
       expanded={expand}
       fixed="top"
       expand="md"
-      className={navColor ? "sticky" : "navbar"}
+      className={`${navColor ? "sticky" : "navbar"} transition-all duration-300 ease-out`}
     >
       <Container>
-        <Navbar.Brand href="/" className="d-flex">
+        <Navbar.Brand href="/" className="flex">
           <img src={logo} className="img-fluid logo" alt="Hai Nguyen" />
         </Navbar.Brand>
 
         <Navbar.Toggle
           aria-controls="responsive-navbar-nav"
           onClick={() => {
-            setExpand(expand ? false : "expanded");
+            setExpand(expand ? false : true);
           }}
+          className="border-transparent focus:outline-none focus:shadow-none"
         >
-          <span />
-          <span />
-          <span />
+          <span className="block bg-[#be50f4] h-1 w-7 my-1.5 transform transition-all duration-300" />
+          <span className="block bg-[#be50f4] h-1 w-7 my-1.5 transform transition-all duration-300" />
+          <span className="block bg-[#be50f4] h-1 w-7 my-1.5 transform transition-all duration-300" />
         </Navbar.Toggle>
 
         <Navbar.Collapse id="responsive-navbar-nav">
@@ -79,6 +86,7 @@ function NavBar() {
                   as={Link}
                   to={tab.path}
                   onClick={() => setExpand(false)}
+                  className="text-lg transition-all duration-200"
                 >
                   {tab.icon} {tab.name}
                 </Nav.Link>
