@@ -78,7 +78,7 @@ function NavBar() {
           <span className="block bg-[#be50f4] h-1 w-7 my-1.5 transform transition-all duration-300" />
         </Navbar.Toggle>
 
-        <Navbar.Collapse id="responsive-navbar-nav">
+        <Navbar.Collapse id="responsive-navbar-nav" role="navigation">
           <Nav className="ms-auto" defaultActiveKey="#home">
             {tabs.map((tab, index) => (
               <Nav.Item key={index}>
