@@ -10,6 +10,7 @@ import x from "../../Assets/project_images/x.png";
 import overflow from "../../Assets/project_images/overflow.png";
 import profile from "../../Assets/project_images/profile.png";
 import carMaster from "../../Assets/project_images/carMaster.png";
+// import mindLog from "../../Assets/project_images/mindLog.png";
 
 function Projects() {
   const projectList = [
@@ -36,6 +37,14 @@ function Projects() {
       description:
         "Personal Chat Room or Workspace to share resources and hangout with friends build with react.js, Material-UI, and Firebase...",
       ghLink: "https://github.com/Hai1205/X",
+    },
+    {
+      // imgPath: mindLog,
+      isBlog: false,
+      title: "MindLog",
+      description:
+        "MindLog is a web application that allows users to easily create, share, and manage their own blog posts. Besides writing, users can also browse, read, and discover posts from the community, creating a rich space for sharing knowledge and personal experiences. MindLog focuses on simplicity, convenience, and connecting people through valuable stories and ideas.",
+      ghLink: "https://github.com/Hai1205/MindLog.git",
     },
     {
       imgPath: overflow,

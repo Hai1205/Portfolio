@@ -5,7 +5,7 @@ function AboutCard() {
     <Card className="quote-card-view">
       <Card.Body>
         <blockquote className="blockquote mb-0">
-          <p className="text-justify">
+          <p className="text-left tracking-normal leading-relaxed">
             Hi Everyone, I am <span className="purple">Hai Nguyen </span>
             from <span className="purple"> Ho Chi Minh City, Viet Nam.</span>
             <br />
@@ -20,7 +20,7 @@ function AboutCard() {
             company.
           </p>
 
-          <p className="text-[#9b7eac]">
+          <p className="text-[#9b7eac] mt-4">
             &quot;Your start doesn&apos;t define your end.&quot;{" "}
           </p>
 

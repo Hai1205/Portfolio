@@ -2,9 +2,10 @@ import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import { CgWebsite } from "react-icons/cg";
 import { BsGithub } from "react-icons/bs";
+import defaultImg from "../../../Assets/project_images/default.png";
 
 interface ProjectCardsProps {
-  imgPath: string;
+  imgPath?: string;
   title: string;
   description: string;
   ghLink: string;
@@ -15,12 +16,12 @@ interface ProjectCardsProps {
 function ProjectCards(props: ProjectCardsProps) {
   return (
     <Card className="project-card-view">
-      <Card.Img variant="top" src={props?.imgPath} alt="card-img" className="p-5 opacity-80 rounded-xl" />
+      <Card.Img variant="top" src={props?.imgPath || defaultImg} alt="card-img" className="p-5 opacity-80 rounded-xl" />
 
       <Card.Body className="flex flex-col flex-grow">
         <Card.Title className="text-[#623686]">{props?.title}</Card.Title>
 
-        <Card.Text className="text-justify flex-grow mb-4">
+        <Card.Text className="text-left tracking-normal leading-relaxed flex-grow mb-4">
           {props?.description}
         </Card.Text>
 

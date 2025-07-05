@@ -104,6 +104,7 @@ function About() {
             <h1 className="text-[2.1em] pb-5">
               Know Who <strong className="purple">I&apos;M</strong>
             </h1>
+            
             <AboutCard />
           </Col>
 
