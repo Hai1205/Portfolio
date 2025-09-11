@@ -1,6 +1,6 @@
 import { Container, Row, Col } from "react-bootstrap";
 import homeLogo from "../../Assets/svg/home-main.svg";
-import Particle from "../components/Particle";
+import Particle from "../../components/Particle";
 import Home2 from "./components/HomeBot";
 import TypeWriter from "./components/TypeWriter";
 
@@ -14,7 +14,10 @@ function Home() {
           <Row>
             <Col md={7} className="home-header">
               <h1 className="heading pb-4">
-                Hi There! {" "} <span className="wave" role="img" aria-labelledby="wave">👋🏻</span>
+                Hi There!{" "}
+                <span className="wave" role="img" aria-labelledby="wave">
+                  👋🏻
+                </span>
               </h1>
 
               <h1 className="heading-name">

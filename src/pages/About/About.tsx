@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import Particle from "../components/Particle";
+import Particle from "../../components/Particle";
 import Github from "./components/Github";
 import Technology from "./components/Technology";
 import AboutCard from "./components/AboutCard";
@@ -15,21 +15,22 @@ import {
   DiJava,
   DiMysql,
   DiLinux,
-  DiPhp,
-  DiRust,
+  // DiPhp,
+  // DiRust,
   DiDjango,
   DiCss3,
   DiGit,
-  DiNetbeans
+  DiDotnet,
+  DiRedis,
 } from "react-icons/di";
 import {
   SiNextdotjs,
-  SiSolidity,
+  // SiSolidity,
   SiNestjs,
   SiExpress,
   SiSpring,
   SiKotlin,
-  SiLatex,
+  // SiLatex,
   SiTailwindcss,
   SiHtml5,
   SiTypescript,
@@ -38,58 +39,69 @@ import {
   SiVercel,
   SiVite,
   SiIntellijidea,
-  SiPycharm,
-  SiWebstorm,
+  // SiApachekafka,
+  SiRabbitmq,
+  // SiPycharm,
+  // SiWebstorm,
   SiXampp,
   SiDatagrip,
 } from "react-icons/si";
-import { TbApi } from "react-icons/tb";
-import { FaAws, FaDocker, FaEdge } from "react-icons/fa";
+import { TbApi, TbBrandCSharp } from "react-icons/tb";
+import { FaAws, FaDocker } from "react-icons/fa";
 
 function About() {
-  const programs = useMemo(() => [
-    { name: "Next.js", icon: <SiNextdotjs /> },
-    { name: "NestJS", icon: <SiNestjs /> },
-    { name: "React", icon: <DiReact /> },
-    { name: "Express.js", icon: <SiExpress /> },
-    { name: "Spring", icon: <SiSpring /> },
-    { name: "Django", icon: <DiDjango /> },
-    { name: "TypeScript", icon: <SiTypescript /> },
-    { name: "Tailwind CSS", icon: <SiTailwindcss /> },
-    { name: "Node.js", icon: <DiNodejs /> },
-    { name: "API", icon: <TbApi /> },
-    { name: "LaTeX", icon: <SiLatex /> },
-    { name: "Solidity", icon: <SiSolidity /> },
-    { name: "Rust", icon: <DiRust /> },
-    { name: "MongoDB", icon: <DiMongodb /> },
-    { name: "MySQL", icon: <DiMysql /> },
-    { name: "CSS3", icon: <DiCss3 /> },
-    { name: "HTML5", icon: <SiHtml5 /> },
-    { name: "PHP", icon: <DiPhp /> },
-    { name: "JavaScript", icon: <DiJavascript1 /> },
-    { name: "Python", icon: <DiPython /> },
-    { name: "Kotlin", icon: <SiKotlin /> },
-    { name: "Java", icon: <DiJava /> },
-    { name: "C++", icon: <CgCPlusPlus /> },
-  ], []);
+  const programs = useMemo(
+    () => [
+      { name: "NestJS", icon: <SiNestjs /> },
+      { name: "Next.js", icon: <SiNextdotjs /> },
+      { name: "React", icon: <DiReact /> },
+      { name: "Express.js", icon: <SiExpress /> },
+      { name: "Node.js", icon: <DiNodejs /> },
+      { name: "Spring", icon: <SiSpring /> },
+      { name: "Django", icon: <DiDjango /> },
+      { name: ".NET", icon: <DiDotnet /> },
+      { name: "TypeScript", icon: <SiTypescript /> },
+      { name: "Java", icon: <DiJava /> },
+      { name: "C#", icon: <TbBrandCSharp /> },
+      { name: "Python", icon: <DiPython /> },
+      { name: "MongoDB", icon: <DiMongodb /> },
+      { name: "Redis", icon: <DiRedis /> },
+      { name: "MySQL", icon: <DiMysql /> },
+      { name: "Tailwind CSS", icon: <SiTailwindcss /> },
+      { name: "API", icon: <TbApi /> },
+      { name: "RabbitMQ", icon: <SiRabbitmq /> },
+      // { name: "Kafka", icon: <SiApachekafka /> },
+      // { name: "LaTeX", icon: <SiLatex /> },
+      // { name: "Solidity", icon: <SiSolidity /> },
+      // { name: "Rust", icon: <DiRust /> },
+      { name: "CSS3", icon: <DiCss3 /> },
+      { name: "HTML5", icon: <SiHtml5 /> },
+      // { name: "PHP", icon: <DiPhp /> },
+      { name: "JavaScript", icon: <DiJavascript1 /> },
+      { name: "Kotlin", icon: <SiKotlin /> },
+      { name: "C++", icon: <CgCPlusPlus /> },
+    ],
+    []
+  );
 
-  const tools = useMemo(() => [
-    { name: "Microsoft Edge", icon: <FaEdge /> },
-    { name: "Visual Studio Code", icon: <SiVisualstudiocode /> },
-    { name: "NetBeans", icon: <DiNetbeans /> },
-    { name: "XAMPP", icon: <SiXampp /> },
-    { name: "IntelliJ IDEA", icon: <SiIntellijidea /> },
-    { name: "PyCharm", icon: <SiPycharm /> },
-    { name: "WebStorm", icon: <SiWebstorm /> },
-    { name: "DataGrip", icon: <SiDatagrip /> },
-    { name: "Git", icon: <DiGit /> },
-    { name: "Postman", icon: <SiPostman /> },
-    { name: "Vite", icon: <SiVite /> },
-    { name: "AWS", icon: <FaAws /> },
-    { name: "Docker", icon: <FaDocker /> },
-    { name: "Vercel", icon: <SiVercel /> },
-    { name: "Linux", icon: <DiLinux /> },
-  ], []);
+  const tools = useMemo(
+    () => [
+      { name: "Visual Studio Code", icon: <SiVisualstudiocode /> },
+      { name: "XAMPP", icon: <SiXampp /> },
+      { name: "IntelliJ IDEA", icon: <SiIntellijidea /> },
+      // { name: "PyCharm", icon: <SiPycharm /> },
+      // { name: "WebStorm", icon: <SiWebstorm /> },
+      { name: "DataGrip", icon: <SiDatagrip /> },
+      { name: "Git", icon: <DiGit /> },
+      { name: "Postman", icon: <SiPostman /> },
+      { name: "Vite", icon: <SiVite /> },
+      { name: "AWS", icon: <FaAws /> },
+      { name: "Docker", icon: <FaDocker /> },
+      { name: "Vercel", icon: <SiVercel /> },
+      { name: "Linux", icon: <DiLinux /> },
+    ],
+    []
+  );
 
   return (
     <Container fluid className="about-section">
@@ -97,21 +109,15 @@ function About() {
 
       <Container>
         <Row className="flex justify-center p-2.5">
-          <Col
-            md={7}
-            className="flex flex-col justify-center pt-8 pb-12"
-          >
+          <Col md={7} className="flex flex-col justify-center pt-8 pb-12">
             <h1 className="text-[2.1em] pb-5">
               Know Who <strong className="purple">I&apos;M</strong>
             </h1>
-            
+
             <AboutCard />
           </Col>
 
-          <Col
-            md={5}
-            className="about-img pt-28 pb-12 flex items-center"
-          >
+          <Col md={5} className="about-img pt-28 pb-12 flex items-center">
             <img src={laptopImg} alt="about" className="img-fluid mx-auto" />
           </Col>
         </Row>

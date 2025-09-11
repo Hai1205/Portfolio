@@ -1,12 +1,12 @@
 import { useState, useEffect, useMemo } from "react";
 import { Container, Row, Button } from "react-bootstrap";
-import Particle from "../components/Particle";
+import Particle from "../../components/Particle";
 import { AiOutlineDownload } from "react-icons/ai";
 import { Document, Page, pdfjs } from "react-pdf";
 import "react-pdf/dist/esm/Page/AnnotationLayer.css";
 import "react-pdf/dist/esm/Page/TextLayer.css";
 import ResumeFile from "../../Assets/pdf/Nguyen_Hoang_Hai_Resume.pdf";
-import PaginationComponent from "../components/Pagination";
+import PaginationComponent from "../../components/Pagination";
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
 
@@ -48,7 +48,7 @@ function Resume() {
 
   const onDocumentLoadSuccess = (numPages: number) => {
     setNumPages(numPages);
-    setPageNumber(prev => (prev > numPages ? 1 : prev));
+    setPageNumber((prev) => (prev > numPages ? 1 : prev));
   };
 
   const buttonWidth = Math.floor(pdfWidth / (!isMobile ? 3 : 2.5));
@@ -62,7 +62,9 @@ function Resume() {
           <div className="w-full flex justify-center overflow-auto">
             <Document
               file={ResumeFile}
-              onLoadSuccess={(document) => onDocumentLoadSuccess(document?.numPages)}
+              onLoadSuccess={(document) =>
+                onDocumentLoadSuccess(document?.numPages)
+              }
               className="flex justify-center"
               options={documentOptions}
             >
@@ -77,7 +79,7 @@ function Resume() {
           </div>
         </Row>
 
-        {ResumeFile && numPages && numPages > 1 &&
+        {ResumeFile && numPages && numPages > 1 && (
           <Row className="justify-center relative mt-8 mb-8">
             <PaginationComponent
               currentPage={pageNumber}
@@ -86,10 +88,14 @@ function Resume() {
               size="sm"
             />
           </Row>
-        }
+        )}
 
-        {ResumeFile &&
-          <Row className={`justify-center relative mb-16 ${numPages && numPages > 1 ? "mt-8" : "mt-0"}`}>
+        {ResumeFile && (
+          <Row
+            className={`justify-center relative mb-16 ${
+              numPages && numPages > 1 ? "mt-8" : "mt-0"
+            }`}
+          >
             <Button
               variant="primary"
               onClick={handleDownloadCV}
@@ -100,7 +106,7 @@ function Resume() {
               <span className="ml-1">Download CV</span>
             </Button>
           </Row>
-        }
+        )}
       </Container>
     </div>
   );

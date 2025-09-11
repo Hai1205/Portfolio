@@ -1,19 +1,19 @@
 import { useState, useEffect } from "react";
-import Preloader from "./pages/components/Pre";
-import Navbar from "./pages/components/Navbar";
-import Footer from "./pages/components/Footer";
-import Home from "./pages/Home/Home";
-import About from "./pages/About/About";
+import Preloader from "./components/Pre";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import Home from "./pages/home/Home";
+import About from "./pages/about/About";
 import {
   BrowserRouter as Router,
   Route,
   Routes,
-  Navigate
+  Navigate,
 } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
-import ScrollToTop from "./pages/components/ScrollToTop";
-import Projects from "./pages/Projects/Projects";
-import Resume from "./pages/Resume/Resume";
+import ScrollToTop from "./components/ScrollToTop";
+import Projects from "./pages/projects/Projects";
+import Resume from "./pages/resume/Resume";
 
 function App() {
   const [load, setLoad] = useState(true);
@@ -30,7 +30,10 @@ function App() {
     <Router>
       <Preloader load={load} />
 
-      <div className="App min-h-screen flex flex-col" id={load ? "no-scroll" : "scroll"}>
+      <div
+        className="App min-h-screen flex flex-col"
+        id={load ? "no-scroll" : "scroll"}
+      >
         <Navbar />
 
         <ScrollToTop />
