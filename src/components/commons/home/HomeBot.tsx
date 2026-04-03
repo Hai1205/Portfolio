@@ -65,7 +65,7 @@ function HomeBot() {
               <br />
 
               Whenever possible, I also apply my passion for developing products
-              with <b className="purple">Express.js</b> or <b className="purple">React.js</b> and
+              with <b className="purple">Spring Boot</b> and
 
               <i>
                 <b className="purple">
@@ -77,7 +77,7 @@ function HomeBot() {
 
               <i>
                 <b className="purple">
-                  {" "} Nest.js and Next.js
+                  {" "} Next.js
                 </b>
               </i>
             </p>

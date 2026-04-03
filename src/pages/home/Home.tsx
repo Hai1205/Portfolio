@@ -1,8 +1,8 @@
 import { Container, Row, Col } from "react-bootstrap";
-import homeLogo from "../../Assets/svg/home-main.svg";
-import Particle from "../../components/Particle";
-import Home2 from "./components/HomeBot";
-import TypeWriter from "./components/TypeWriter";
+import homeLogo from "@/Assets/svg/home-main.svg";
+import Particle from "@/components/commons/system/Particle";
+import Home2 from "@/components/commons/home/HomeBot";
+import TypeWriter from "@/components/commons/home/TypeWriter";
 
 function Home() {
   return (

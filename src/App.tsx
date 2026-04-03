@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import Preloader from "./components/Pre";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
+import Preloader from "./components/commons/system/Pre";
+import Navbar from "./components/commons/system/Navbar";
+import Footer from "./components/commons/system/Footer";
 import Home from "./pages/home/Home";
 import About from "./pages/about/About";
 import {
@@ -11,7 +11,7 @@ import {
   Navigate,
 } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
-import ScrollToTop from "./components/ScrollToTop";
+import ScrollToTop from "./components/commons/system/ScrollToTop";
 import Projects from "./pages/projects/Projects";
 import Resume from "./pages/resume/Resume";
 

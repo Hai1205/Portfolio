@@ -1,10 +1,10 @@
 import { useMemo } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import Particle from "../../components/Particle";
-import Github from "./components/Github";
-import Technology from "./components/Technology";
-import AboutCard from "./components/AboutCard";
-import laptopImg from "../../Assets/images/about.png";
+import Particle from "@/components/commons/system/Particle";
+import Github from "@/components/commons/about/Github";
+import Technology from "@/components/commons/about/Technology";
+import AboutCard from "@/components/commons/about/AboutCard";
+import laptopImg from "@/Assets/images/about.png";
 import { CgCPlusPlus } from "react-icons/cg";
 import {
   DiJavascript1,
@@ -43,8 +43,8 @@ import {
   SiRabbitmq,
   // SiPycharm,
   // SiWebstorm,
-  SiXampp,
   SiDatagrip,
+  SiLaragon,
 } from "react-icons/si";
 import { TbApi, TbBrandCSharp } from "react-icons/tb";
 import { FaAws, FaDocker } from "react-icons/fa";
@@ -52,15 +52,15 @@ import { FaAws, FaDocker } from "react-icons/fa";
 function About() {
   const programs = useMemo(
     () => [
-      { name: "NestJS", icon: <SiNestjs /> },
-      { name: "Next.js", icon: <SiNextdotjs /> },
-      { name: "React", icon: <DiReact /> },
-      { name: "Express.js", icon: <SiExpress /> },
-      { name: "Node.js", icon: <DiNodejs /> },
       { name: "Spring", icon: <SiSpring /> },
+      { name: "Next.js", icon: <SiNextdotjs /> },
+      { name: "Express.js", icon: <SiExpress /> },
       { name: "Django", icon: <DiDjango /> },
       { name: ".NET", icon: <DiDotnet /> },
       { name: "TypeScript", icon: <SiTypescript /> },
+      { name: "NestJS", icon: <SiNestjs /> },
+      { name: "React", icon: <DiReact /> },
+      { name: "Node.js", icon: <DiNodejs /> },
       { name: "Java", icon: <DiJava /> },
       { name: "C#", icon: <TbBrandCSharp /> },
       { name: "Python", icon: <DiPython /> },
@@ -81,13 +81,15 @@ function About() {
       { name: "Kotlin", icon: <SiKotlin /> },
       { name: "C++", icon: <CgCPlusPlus /> },
     ],
-    []
+    [],
   );
 
   const tools = useMemo(
     () => [
       { name: "Visual Studio Code", icon: <SiVisualstudiocode /> },
-      { name: "XAMPP", icon: <SiXampp /> },
+      { name: "Docker", icon: <FaDocker /> },
+      { name: "Vercel", icon: <SiVercel /> },
+      { name: "Laragon", icon: <SiLaragon /> },
       { name: "IntelliJ IDEA", icon: <SiIntellijidea /> },
       // { name: "PyCharm", icon: <SiPycharm /> },
       // { name: "WebStorm", icon: <SiWebstorm /> },
@@ -96,11 +98,9 @@ function About() {
       { name: "Postman", icon: <SiPostman /> },
       { name: "Vite", icon: <SiVite /> },
       { name: "AWS", icon: <FaAws /> },
-      { name: "Docker", icon: <FaDocker /> },
-      { name: "Vercel", icon: <SiVercel /> },
       { name: "Linux", icon: <DiLinux /> },
     ],
-    []
+    [],
   );
 
   return (

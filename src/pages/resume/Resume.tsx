@@ -1,12 +1,12 @@
 import { useState, useEffect, useMemo } from "react";
 import { Container, Row, Button } from "react-bootstrap";
-import Particle from "../../components/Particle";
+import Particle from "@/components/commons/system/Particle";
 import { AiOutlineDownload } from "react-icons/ai";
 import { Document, Page, pdfjs } from "react-pdf";
 import "react-pdf/dist/esm/Page/AnnotationLayer.css";
 import "react-pdf/dist/esm/Page/TextLayer.css";
-import ResumeFile from "../../Assets/pdf/Nguyen_Hoang_Hai_Resume.pdf";
-import PaginationComponent from "../../components/Pagination";
+import ResumeFile from "@/Assets/resume/Nguyen_Hoang_Hai_Resume.pdf";
+import PaginationComponent from "@/components/commons/system/Pagination";
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
 

@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
-import logo from "/logo.png";
 import { Link } from "react-router-dom";
 import {
   AiOutlineHome,
@@ -10,6 +9,7 @@ import {
   AiOutlineUser,
 } from "react-icons/ai";
 import { CgFileDocument } from "react-icons/cg";
+import logo from "@/Assets/images/logo.png";
 
 function NavBar() {
   const [expand, setExpand] = useState(false);
@@ -19,23 +19,23 @@ function NavBar() {
     {
       path: "/",
       name: "Home",
-      icon: <AiOutlineHome className="mb-0.5" />
+      icon: <AiOutlineHome className="mb-0.5" />,
     },
     {
       path: "/about",
       name: "About",
-      icon: <AiOutlineUser className="mb-0.5" />
+      icon: <AiOutlineUser className="mb-0.5" />,
     },
     {
       path: "/project",
       name: "Projects",
-      icon: <AiOutlineFundProjectionScreen className="mb-0.5" />
+      icon: <AiOutlineFundProjectionScreen className="mb-0.5" />,
     },
     {
       path: "/resume",
       name: "Resume",
-      icon: <CgFileDocument className="mb-0.5" />
-    }
+      icon: <CgFileDocument className="mb-0.5" />,
+    },
   ];
 
   useEffect(() => {

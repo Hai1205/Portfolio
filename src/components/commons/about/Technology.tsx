@@ -1,12 +1,7 @@
 import { Col, OverlayTrigger, Row, Tooltip } from "react-bootstrap";
 
-type Tool = {
-  name: string;
-  icon: React.ReactNode;
-};
-
 interface TechnologyProps { 
-  tools: Tool[];
+  tools: ITool[];
 }
 
 function Technology(props: TechnologyProps) {
@@ -18,7 +13,7 @@ function Technology(props: TechnologyProps) {
 
   return (
     <Row className="flex justify-center pb-12">
-      {props?.tools?.map((tool: Tool, index: number) => (
+      {props?.tools?.map((tool: ITool, index: number) => (
         <OverlayTrigger
           key={index}
           placement="top"
